@@ -135,7 +135,6 @@ function animate() {
     });
     if (allBullets.length > 100)
         allBullets.splice(0,50);
-    console.log(allBullets);
     if(framesCount % 3 == 0){
         // console.log(mousePos);
         // createVector(mousePos.clone().normal(),'m')
@@ -214,20 +213,27 @@ function fireGun() {
         fromEntity:player,
         direction:mousePos.clone().sub(player.position).normalize()
     });
-    newBullet.audio.volume = 0.5;
+    newBullet.audio.volume = 0.1;
     newBullet.audio.play();
 
     allBullets.push(newBullet);
 }
 
 window.addEventListener('mousedown', (event) => {
+    event.preventDefault();
     //fireGun();
+    if(event.button === 0)
     firing=true;
 });
 window.addEventListener('mouseup', (event) => {
+    event.preventDefault();
     //fireGun();
+    if(event.button === 0)
     firing=false;
 });
+window.addEventListener('contextmenu',event => {
+    event.preventDefault();
+})
 const handleKeydown = (event:KeyboardEvent) => {
     switch (event.key){
         case 'd':
