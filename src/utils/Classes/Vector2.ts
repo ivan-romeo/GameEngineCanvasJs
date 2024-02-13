@@ -103,14 +103,14 @@ export default class Vector2 {
         this.y = ((this.x * Math.sin(degrees)) + (this.y * Math.cos(degrees)));
         return this;
     }
-    rotateByDirection(vectorDir:Vector2){
-        /*
-        * Bx = (cos@ * -sin@) * Ax
-        * By = (sin@ * cos@) * Ay
-        * */
-
-        return this;
-    }
+    // rotateByDirection(vectorDir:Vector2){
+    //     /*
+    //     * Bx = (cos@ * -sin@) * Ax
+    //     * By = (sin@ * cos@) * Ay
+    //     * */
+    //
+    //     return this;
+    // }
 
 
 
